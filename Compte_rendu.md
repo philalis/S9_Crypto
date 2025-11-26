@@ -104,9 +104,17 @@ Calcul du nombre total maximal de bitcoins qui seront créés :
 - Récompense initiale : 50 BTC
 - Nombre de halvings : 33 (car 2^33 * 50 BTC = 21 000 000 BTC)
 - Série géométrique :
-  Total BTC = 50 + 25 + 12.5 + 6.25 + ... jusqu'à 33 termes
-  Total BTC = 50 * (1 - (1/2)^33) / (1 - 1/2)
-  Total BTC = 50 * (1 - 1/8589934592) / (1/2)
-  Total BTC ≈ 21 000 000 BTC
+  Total BTC = 50 + 25 + 12.5 + 6.25 + ... jusqu'à 33 termes ;
+  Total BTC = 50 * (1 - (1/2)^33) / (1 - 1/2) ;
+  Total BTC = 50 * (1 - 1/8589934592) / (1/2) ;
+  Total BTC ≈ 21 000 000 BTC ;
 Donc, le nombre total maximal de bitcoins qui seront créés est de 21 millions de bitcoins.
 #### Question 4.22
+Le temps moyen ciblé entre deux blocs dans le réseau Bitcoin est de 10 minutes.
+#### Question 4.23
+Le protocole Bitcoin ajuste la difficulté de minage toutes les 2016 blocs (environ toutes les deux semaines) pour maintenir un temps moyen de création de bloc d'environ 10 minutes. Si les blocs sont minés plus rapidement que prévu, la difficulté augmente, rendant le minage plus difficile. Inversement, si les blocs sont minés plus lentement, la difficulté diminue. Cet ajustement automatique garantit que la production de nouveaux blocs reste stable malgré les variations de la puissance de calcul du réseau.
+#### Question 4.24
+La difficulté est ajustée toutes les 2016 blocs pour maintenir un temps moyen de création de bloc d'environ 10 minutes. Si les blocs sont minés plus rapidement que prévu, la difficulté augmente, rendant le minage plus difficile. Inversement, si les blocs sont minés plus lentement, la difficulté diminue. Cet ajustement automatique garantit que la production de nouveaux blocs reste stable malgré les variations de la puissance de calcul du réseau.
+#### Question 4.25
+Si la puissance de calcul du réseau double, la difficulté de minage augmentera lors du prochain ajustement pour maintenir le temps moyen de création de bloc à environ 10 minutes. Cela rendra le minage plus difficile, car les mineurs devront effectuer plus de calculs pour trouver un hash valide.
+#### Question 4.26
