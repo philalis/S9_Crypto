@@ -60,7 +60,7 @@ def main():
         freqs.append(tmp)
         plt.figure()
         plt.plot(tmp[:][1])
-    clef = "DMRDAHR"
+    clef = "ENSEAIS"
     decode(textToDecode,clef)
     pass
 
