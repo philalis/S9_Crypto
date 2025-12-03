@@ -1,0 +1,11 @@
+{
+  "ciphertext": "aGQt3HsqhFFf886oMWW9D0jGr7EiTZYSL1o29fwTp0Zg8U9V/KPM+VVfq86aCZxhRWS0XoLXLAtn+RCmysOWs04hNHRI7h87zAIpgIpIlpCgX2KEaAa+h3imQ9uueSLzpjxOijiCVwc69eqTJtntbr2dlgFM6nG6a62OLDaA/ XaiBBc2pzcp42DyReTccaAqbcUk6RknbLhDxjCcg4V+Eeocu3mJVpqlvKsl7wud4xJt0qXVaYf9sNWBrmWNGSzS8ta5aPI+/ypZveV7Hq0kBHJN6tVaGT800oElguxKr9p5xMO4WJPny6x32qNAbLGKZaG3E1BqvjT04aYY/P7NX05jNXYu6g43OSGVSxN...",
+  "iv": "V52NqKHOL8C0jbNYOHItgw==",
+  "keyMetadata": {
+    "algorithm": "PBKDF2",
+    "params": {
+      "iterations": 600000
+    }
+  },
+  "salt": "JR53k2vFWO11bPrXZLcCYEE01fxSQhTy/8 oWaco0bIs="
+}
