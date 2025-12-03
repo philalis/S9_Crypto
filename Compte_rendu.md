@@ -215,3 +215,9 @@ Le Sel (Salt) sert à modifier le hachage afin que 2 mêmes entrées est des sor
 
 #### Question 5.8
 Le standard BIP39 utilise une suite de mot comme mot de passe. Il est plus facile de se souvenir d'une suite de mots (mnémotechnique) que d'une suite de chiffres.
+#### Question 5.9
+
+
+#### Question 5.12
+seed :
+b"\x82|\x8ce\xa5\x8eP\xbdm'\xfb\x88=\x9c(Gv\xf5\xa4\xe9`\tH*4\x97\x80\xf0\xbd\x84z x7a\x8b\x84\x1f0[\xad\xc5J\xf5 \x95\xd3\xa8\xb6J\xb6\xb8\xed)\xacFe\xca\xc9\xbe?\x7f\xa5\xda"
