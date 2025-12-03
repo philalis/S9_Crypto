@@ -204,14 +204,58 @@ Les alternatives proposées pour réduire l'impact environnemental incluent :
 Ces alternatives visent à maintenir la sécurité et la décentralisation du réseau tout en minimisant son impact environnemental.
 #### Question 4.41
 En analysant l'évolution du hashrate total du réseau sur les 6 derniers mois,
-
-## Exercice 5 : Analyse forensique d’une extension Chrome pour les crypto-actifs  
-
+## Exercice 5 : Analyse forensique d'une extension Chrome pour les crypto-actifs
+### 5.3 Analyse du format de données
+#### Question 5.1
+- cipherext : c'est la version chiffrée de la clé privée, illisible sans la bonne clé.
+- iv : c'est un petit bloc aléatoire utilisé pour rendre chaque chiffrement unique.
+- algorithm : c'est la méthode utilisée pour transformer le mot de passe en clé de chiffrement.
+- iterations : c'est le nombre de répétitions appliqées à la dérivation de la clé pour ralentir les attaques.
+- salt : c'est une valeur aléatoire ajoutée au mot de passe pour que la clé dérivée soit unique.
+#### Question 5.2
+Les valeurs ciphertex, iv et salt sont encodées en base64 pour garantir que les données binaires peuvent être stockées et transmises sous forme de texte. La base64 convertit les données binaires en une chaîne de caractères ASCII, ce qui facilite leur manipulation dans des environnements qui ne supportent pas les données binaires brutes.
+1. Taille de iv :
+- " i v " : "V52NqKHOL8C0jbNYOHItgw=="
+- La base64 encode 3 octets en 4 caractères.
+- Ici, on a 24 caractères, donc 24 / 4 * 3 = 18 octets.
+2. Taille de salt :
+- " s a l t " : "JR53k2vFWO11bPrXZLcCYEE01fxSQhTy/8 oWaco0bIs="
+- Ici, on a 44 caractères, donc 44 / 4 * 3 = 33 octets.
+### 5.4 Analyse du code source
+#### Question 5.3
+Dans le code source, les données sont chiffrées avec l'algorithme AES-GCM.
+#### Question 5.4
+- AES-CBC chiffre bloc par bloc mais ne protège pas contre la modification.
+- AES-CTR fonctionne comme un flux chiffrant, très rapide mais sans intégrité.
+- AES-GCM chiffre et ajoute une authentification intégrée pour empêcher toute altération.
+- Metamask utilise AES-GCM parce qu'il protège à la fois la confidentialité et l'intégrité des clés privées.
+#### Question 5.5
+Processus complet de déchiffrement :
+1. Entrées nécessaires : Le déchiffrement nécessite :
+   - Le mot de passe de l'utilisateur.
+   - Le salt (extrait des données stockées).
+   - Le nombre d'itérations (extrait des données stockées).
+   - L'iv (extrait des données stockées).
+   - Le ciphertext (extrait des données stockées).
+2. Etapes de dérivation de clé : La clé est dérivée en appliquant PBKDF2 au mot de passe avec le salt et le nombre d'itérations indiquées.
+3. Algorithme de déchiffrement : Le déchiffrement se fait ensuite avec AES-GCM en utilisant la clé dérivée et l'IV.
+4. Sorties obtenues : Le résultat final est le contenu du ciphertext déchiffré, contenant les clés privées.
 ### 5.6 Graines mnémoniques (BIP39)
 #### Question 5.6
 On utilise 600000 itérations pour éviter le brute forcing (les itération prennent du temps, peu pour l'utilisateur, mais trop pour le brute forceur.)
 #### Question 5.7
 Le Sel (Salt) sert à modifier le hachage afin que 2 mêmes entrées est des sorties différentes (Sel différent). Il est utilisé pour éviter les attaques par "Rainbow Table".
-
 #### Question 5.8
 Le standard BIP39 utilise une suite de mot comme mot de passe. Il est plus facile de se souvenir d'une suite de mots (mnémotechnique) que d'une suite de chiffres.
+### 5.7 Dérivation hiérarchique (BIP32/BIP44)
+#### Question 5.14
+Un portefeuille HD (Hierarchical Deterministic) est un type de portefeuille de crypto-monnaies qui génère une hiérarchie d'adresses à partir d'une seule graine (seed) maître. Cela permet de créer de nombreuses adresses publiques et privées dérivées de manière déterministe, facilitant la gestion des fonds et améliorant la sécurité. Les portefeuilles HD permettent également de sauvegarder et restaurer toutes les adresses et clés à partir de la graine maître, simplifiant ainsi la gestion des portefeuilles.
+#### Question 5.15
+Signification de m/44'/60'/0'/0/0 :
+- m : représente la racine de la hiérarchie des clés.
+- 44' : indique que le portefeuille suit la norme BIP44.
+- 60' : représente le type de crypto-monnaie (60 pour Ethereum).
+- 0' : indique le compte principal (compte 0).
+- 0 : représente la chaîne externe (0 pour les adresses de réception).
+- 0 : indique l'index de l'adresse (la première adresse dans cette chaîne).
+#### Question 5.16
