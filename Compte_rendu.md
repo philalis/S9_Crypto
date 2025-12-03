@@ -37,6 +37,33 @@ Lorsqu'un certificat est révoqué, cela signifie qu'il n'est plus considéré c
 Les extensions de certificat sont des champs supplémentaires dans un certificat numérique qui fournissent des informations supplémentaires sur le certificat ou imposent des contraintes sur son utilisation. Elles peuvent inclure des informations telles que les usages autorisés du certificat (par exemple, authentification de serveur, signature de code), les politiques de certification, les identifiants alternatifs du sujet, et d'autres données pertinentes. Les extensions permettent de personnaliser les certificats pour répondre à des besoins spécifiques et d'améliorer la sécurité et la gestion des certificats.
 #### Question 2.6
 Un certificat auto-signé est un certificat numérique qui est signé par la même entité qui l'a émis, plutôt que par une autorité de certification (CA) de confiance. Cela signifie que l'entité qui utilise le certificat est responsable de sa propre validation. Les certificats auto-signés sont souvent utilisés pour des tests internes, des environnements de développement, ou des applications où la confiance externe n'est pas nécessaire. Cependant, ils ne sont pas considérés comme fiables pour les communications publiques, car ils ne bénéficient pas de la validation d'une CA reconnue.
+
+## Exercice 3 : Cryptanalyse du chiffre de Vigenère
+### Question 3.1 
+On trouve un indice de cohérence de 0.0457.  
+On peut en déduire qu'il ne s'agit pas d'un cryptage par code de César, sinon l'IC aurait été proche de 0.0778 (référence pour un texte en français).
+### Question 3.2
+On trouve que la longueur de la clé serait de 21 (IC le plus proche de la valeur de référence).  
+En regardant les valeurs d'ICs pour les longueurs 3 et 7, on peut supposer que la clé est de longueur 7 (3 à un mauvais IC, et 7 à un IC proche de celui de référence).
+### Question 3.3 
+Pour une clé de 7 caractères, on trouve `ENSEAIS` comme clé.
+### Question 3.4
+Message décodé : 
+``FELICITATIONS POUR AVOIR TROUVE LA CLE DE CHIFFREMENT VOUS AVEZ REUSSI CET EXERCICE DE CRYPTOGRAPHIE FELICITATIONS ENCORE UNE FOIS POUR VOTRE TRAVAIL REMARQUABLE VOUS AVEZ FAIT PREUVE DE PERSEVERANCE ET DE LOGIQUE POUR DECODER CE MESSAGE SECRET BRAVO POUR VOTRE DETERMINATION LA CRYPTOGRAPHIE EST UN ART ANCIEN QUI REMONTE A L ANTIQUITE FELICITATIONS VOUS MAITRISEZ MAINTENANT LES BASES DU CHIFFREMENT DE VIGENERE CE SYSTEME A ETE INVENTE AU SEIZIEME SIECLE BRAVO POUR AVOIR PERCE CE MYSTERE LA CRYPTANALYSE DEMANDE DE LA PATIENCE FELICITATIONS VOUS AVEZ LES COMPETENCES NECESSAIRES POUR CONTINUER DANS CETTE VOIE BRAVO ENCORE``
+### Question 3.5
+L'indice de coïncidence est un bon outils pour attaquer un texte, car cela utilise les "faiblesses" (ou les habitudes) des langues. Cette attaque s'appuie sur le fait que certaines lettres sont plus utilisées que les autres.
+### Question 3.6
+La méthode de Kasiski constiste à rechercher des répétitions dans le texte codé. Il est alors très probable que les répétitions viennent de répétitions dans le texte non codé, espacées d'un multiple de la clé.
+On en déduit alors la longeur de la clé.
+On utilise ensuite l'IC pour connaitre les valeurs dans la clé.
+### Question 3.7
+Pour avoir un "One time pad" qui garantit la confidentialité des données, il faut un pad de la longueur du texte à transmettre.
+### Question 3.8
+L'inconvénient est que cette clé est très longue.
+### Question 3.9 
+On ne peut réemettre un message avec la même clé, sinon on pourrait faire une attaque avec les méthodes précédentes.  
+(Cela revient à avoir un texte initial plus long, avec la clé qui se répète.)
+
 ## Exercice 4 : Exploration de la blockchain Bitcoin
 ### 4.4 Questions
 #### Question 4.1
