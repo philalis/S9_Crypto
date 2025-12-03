@@ -207,8 +207,11 @@ En analysant l'évolution du hashrate total du réseau sur les 6 derniers mois,
 
 ## Exercice 5 : Analyse forensique d’une extension Chrome pour les crypto-actifs  
 
-
-### Question 5.6
+### 5.6 Graines mnémoniques (BIP39)
+#### Question 5.6
 On utilise 600000 itérations pour éviter le brute forcing (les itération prennent du temps, peu pour l'utilisateur, mais trop pour le brute forceur.)
-### Question 5.7
+#### Question 5.7
 Le Sel (Salt) sert à modifier le hachage afin que 2 mêmes entrées est des sorties différentes (Sel différent). Il est utilisé pour éviter les attaques par "Rainbow Table".
+
+#### Question 5.8
+Le standard BIP39 utilise une suite de mot comme mot de passe. Il est plus facile de se souvenir d'une suite de mots (mnémotechnique) que d'une suite de chiffres.
