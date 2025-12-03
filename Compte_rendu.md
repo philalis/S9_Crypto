@@ -145,3 +145,62 @@ La difficulté est ajustée toutes les 2016 blocs pour maintenir un temps moyen 
 #### Question 4.25
 Si la puissance de calcul du réseau double, la difficulté de minage augmentera lors du prochain ajustement pour maintenir le temps moyen de création de bloc à environ 10 minutes. Cela rendra le minage plus difficile, car les mineurs devront effectuer plus de calculs pour trouver un hash valide.
 #### Question 4.26
+Pour rajouter un 0, la puissance de calcul du réseau doit être multipliée par 16 pour valider un bloc. Cela est dû au fait que chaque zéro supplémentaire dans le hash cible réduit la plage de valeurs valides de manière exponentielle, rendant la recherche d'un hash valide beaucoup plus difficile.
+#### Question 4.27
+Il faut attendre plusieurs confirmations pour considérer une transaction comme définitive puisque chaque nouveau bloc ajouté à la blockchain renforce la sécurité de la transaction. En général, 6 confirmations (c'est-à-dire 6 blocs ajoutés après le bloc contenant la transaction) sont considérées comme suffisantes pour garantir que la transaction est irréversible et sécurisée contre les attaques de double dépense.
+#### Question 4.28
+Le nombre de confirmations nécessaires pour considérer une transaction comme définitive dépend du montant de la transaction et du niveau de sécurité souhaité. Pour les petites transactions, 1 à 3 confirmations peuvent suffire, tandis que pour les transactions plus importantes, 6 confirmations ou plus sont recommandées pour garantir la sécurité.
+#### Question 4.29
+Une attaque de 51% se produit lorsqu'un individu ou un groupe contrôle plus de 50% de la puissance de calcul totale du réseau Bitcoin. Cela leur permettrait de manipuler la blockchain en validant des transactions frauduleuses, en annulant des transactions confirmées, et en empêchant d'autres mineurs de valider des blocs. Une telle attaque compromettrait la sécurité et l'intégrité du réseau, bien qu'elle soit extrêmement difficile et coûteuse à réaliser en raison de la taille et de la décentralisation du réseau Bitcoin.
+#### Question 4.30
+Dans Bitcoin, la fonction de hachage utilisée est SHA-256 (Secure Hash Algorithm 256 bits). SHA-256 est une fonction de hachage cryptographique qui produit un hash de 256 bits à partir de n'importe quelle entrée. Elle est largement utilisée dans le protocole Bitcoin pour sécuriser les transactions et les blocs, garantissant l'intégrité et la sécurité du réseau.
+#### Question 4.31
+La taille d'un hash Bitcoin est de 256 bits, soit 32 octets.
+#### Question 4.32
+Le hash d'un bloc Bitcoin est calculé en appliquant la fonction de hachage SHA-256 deux fois (double SHA-256) à l'en-tête du bloc. L'en-tête du bloc comprend plusieurs champs, tels que le hash du bloc précédent, le Merkle root des transactions, le timestamp, la difficulté de la preuve de travail, et le nonce. Le processus de double hachage renforce la sécurité du hash en rendant plus difficile la prédiction ou la manipulation du hash.
+#### Question 4.33
+En observant les hashes des blocs, on remarque qu'ils semblent aléatoires et ne présentent pas de motifs évidents. Cela est dû à la nature des fonctions de hachage cryptographiques, qui produisent des sorties apparemment aléatoires même pour des entrées similaires. Cette caractéristique est essentielle pour la sécurité de la blockchain, car elle empêche la prédiction des hashes et rend difficile la manipulation des blocs.
+#### Question 4.34
+Dans Bitcoin, la preuve de travail est un mécanisme de consensus utilisé pour sécuriser le réseau et valider les transactions. Les mineurs doivent résoudre un problème mathématique complexe en ajustant le nonce dans l'en-tête du bloc jusqu'à ce qu'ils trouvent un hash qui satisfait les conditions de difficulté spécifiées. Ce processus nécessite une puissance de calcul significative, ce qui rend difficile la falsification des blocs. La preuve de travail garantit que les mineurs investissent des ressources pour sécuriser le réseau, rendant les attaques coûteuses et peu pratiques.
+#### Question 4.35
+Condition qu'un hash de bloc doit satisfaire pour être considéré comme valide :
+H(block_header) < target
+#### Question 4.36
+Le nombre moyen de tentatives nécessaires pour trouver un bloc valide actuellement (bloc N°924561) est d'environ 2^88. Cela signifie que les mineurs doivent effectuer environ 2^88 calculs de hash pour trouver un nonce qui produit un hash de bloc inférieur à la cible actuelle, en fonction de la difficulté du réseau.
+#### Exercice pratique
+1. Numéro du bloc : 926259
+2. Hash du bloc : 0000000000000000000188d22a47b90f1185be7888905943b55dacda227e22c5
+3. Hash du bloc précédent : 75494c3916c1583a6b4d50c0af1c6e157d59241a38323438adcb62eeff5d3165
+4. Timestamp : 2025-12-03 09:00:26
+5. Nombre de transactions : 4342
+6. Taille du bloc : 1.76 MB
+7. Difficulté : 149301205959699.9
+8. Nonce : 0x151e46c9
+9. Récompense totale du mineur (block reward + fees) : 3,133 BTC 291419 $US 
+10. Pool de minage ayant trouvé ce bloc : SpiderPool
+#### Question 4.37
+La structure en chaîne de blocs garantit l'immutabilité des transactions passées en reliant chaque bloc au précédent via le hash du bloc précédent. Si une transaction dans un bloc est modifiée, le hash de ce bloc change, ce qui invalide tous les blocs suivants dans la chaîne. Pour altérer une transaction passée, un attaquant devrait recalculer les preuves de travail pour tous les blocs suivants, ce qui est extrêmement difficile et coûteux en raison de la puissance de calcul requise. Ainsi, la structure en chaîne de blocs rend pratiquement impossible la modification des transactions passées sans être détecté.
+#### Question 4.38
+Bitcoin est un système décentralisé car il n'est pas contrôlé par une autorité centrale ou un organisme unique. Au lieu de cela, le réseau Bitcoin est maintenu par un grand nombre de nœuds (ordinateurs) répartis dans le monde entier, qui valident les transactions et maintiennent la blockchain. Cette décentralisation garantit que le réseau est résistant à la censure, aux pannes et aux attaques, car il n'y a pas de point de contrôle unique. De plus, les règles du protocole Bitcoin sont définies par consensus parmi les participants du réseau, ce qui renforce encore la nature décentralisée du système.
+Les acteurs qui participent à cette décentralisation incluent les mineurs, qui valident les transactions et créent de nouveaux blocs, ainsi que les nœuds complets, qui conservent une copie complète de la blockchain et aident à propager les transactions et les blocs à travers le réseau.
+#### Question 4.39
+Débit maximum théorique de transactions par seconde (TPS) dans le réseau Bitcoin :
+- Taille moyenne d'une transaction : environ 250 octets
+- Taille maximale d'un bloc : 1 Mo (1 000 000 octets)
+- Nombre maximum de transactions par bloc = Taille maximale du bloc / Taille moyenne d'une transaction
+= 1 000 000 octets / 250 octets = 4000 transactions
+- Temps moyen entre deux blocs : 10 minutes (600 secondes)
+- Débit maximum théorique (TPS) = Nombre maximum de transactions par bloc / Temps moyen entre deux blocs
+= 4000 transactions / 600 secondes ≈ 6.67 TPS
+Donc, le débit maximum théorique de transactions par seconde dans le réseau Bitcoin est d'environ 6.67 TPS.
+Comparé à d'autres systèmes de paiement traditionnels comme Visa, qui peut traiter des milliers de transactions par seconde, le débit de Bitcoin est relativement faible. Cela limite son utilisation pour les paiements rapides et fréquents, mais il reste une solution viable pour les transactions de valeur plus élevée et les transferts internationaux.
+#### Question 4.40
+Les implications environnementales du mécanisme de preuve de travail (Proof of Work) utilisé dans le réseau Bitcoin sont significatives en raison de la consommation énergétique élevée associée au minage. Le processus de minage nécessite une puissance de calcul considérable, ce qui se traduit par une consommation d'électricité importante. Cette consommation énergétique a conduit à des préoccupations environnementales, notamment en ce qui concerne l'empreinte carbone du réseau Bitcoin, surtout si l'électricité utilisée provient de sources non renouvelables.
+Les alternatives proposées pour réduire l'impact environnemental incluent :
+- Passage à des mécanismes de consensus moins énergivores, tels que la preuve d'enjeu (Proof of Stake), qui ne nécessite pas de calculs intensifs.
+- Utilisation de sources d'énergie renouvelables pour le minage, comme l'énergie solaire ou éolienne.
+- Amélioration de l'efficacité énergétique des équipements de minage.
+- Développement de solutions de couche 2, comme le Lightning Network, qui permettent de traiter les transactions hors chaîne, réduisant ainsi la charge sur la blockchain principale.
+Ces alternatives visent à maintenir la sécurité et la décentralisation du réseau tout en minimisant son impact environnemental.
+#### Question 4.41
+En analysant l'évolution du hashrate total du réseau sur les 6 derniers mois,
