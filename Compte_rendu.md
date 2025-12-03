@@ -118,3 +118,23 @@ La difficulté est ajustée toutes les 2016 blocs pour maintenir un temps moyen 
 #### Question 4.25
 Si la puissance de calcul du réseau double, la difficulté de minage augmentera lors du prochain ajustement pour maintenir le temps moyen de création de bloc à environ 10 minutes. Cela rendra le minage plus difficile, car les mineurs devront effectuer plus de calculs pour trouver un hash valide.
 #### Question 4.26
+Pour rajouter un 0, la puissance de calcul du réseau doit être multipliée par 16 pour valider un bloc. Cela est dû au fait que chaque zéro supplémentaire dans le hash cible réduit la plage de valeurs valides de manière exponentielle, rendant la recherche d'un hash valide beaucoup plus difficile.
+#### Question 4.27
+Il faut attendre plusieurs confirmations pour considérer une transaction comme définitive puisque chaque nouveau bloc ajouté à la blockchain renforce la sécurité de la transaction. En général, 6 confirmations (c'est-à-dire 6 blocs ajoutés après le bloc contenant la transaction) sont considérées comme suffisantes pour garantir que la transaction est irréversible et sécurisée contre les attaques de double dépense.
+#### Question 4.28
+Le nombre de confirmations nécessaires pour considérer une transaction comme définitive dépend du montant de la transaction et du niveau de sécurité souhaité. Pour les petites transactions, 1 à 3 confirmations peuvent suffire, tandis que pour les transactions plus importantes, 6 confirmations ou plus sont recommandées pour garantir la sécurité.
+#### Question 4.29
+Une attaque de 51% se produit lorsqu'un individu ou un groupe contrôle plus de 50% de la puissance de calcul totale du réseau Bitcoin. Cela leur permettrait de manipuler la blockchain en validant des transactions frauduleuses, en annulant des transactions confirmées, et en empêchant d'autres mineurs de valider des blocs. Une telle attaque compromettrait la sécurité et l'intégrité du réseau, bien qu'elle soit extrêmement difficile et coûteuse à réaliser en raison de la taille et de la décentralisation du réseau Bitcoin.
+#### Question 4.30
+Dans Bitcoin, la fonction de hachage utilisée est SHA-256 (Secure Hash Algorithm 256 bits). SHA-256 est une fonction de hachage cryptographique qui produit un hash de 256 bits à partir de n'importe quelle entrée. Elle est largement utilisée dans le protocole Bitcoin pour sécuriser les transactions et les blocs, garantissant l'intégrité et la sécurité du réseau.
+#### Question 4.31
+La taille d'un hash Bitcoin est de 256 bits, soit 32 octets.
+#### Question 4.32
+Le hash d'un bloc Bitcoin est calculé en appliquant la fonction de hachage SHA-256 deux fois (double SHA-256) à l'en-tête du bloc. L'en-tête du bloc comprend plusieurs champs, tels que le hash du bloc précédent, le Merkle root des transactions, le timestamp, la difficulté de la preuve de travail, et le nonce. Le processus de double hachage renforce la sécurité du hash en rendant plus difficile la prédiction ou la manipulation du hash.
+#### Question 4.33
+En observant les hashes des blocs, on remarque qu'ils semblent aléatoires et ne présentent pas de motifs évidents. Cela est dû à la nature des fonctions de hachage cryptographiques, qui produisent des sorties apparemment aléatoires même pour des entrées similaires. Cette caractéristique est essentielle pour la sécurité de la blockchain, car elle empêche la prédiction des hashes et rend difficile la manipulation des blocs.
+#### Question 4.34
+Dans Bitcoin, la preuve de travail est un mécanisme de consensus utilisé pour sécuriser le réseau et valider les transactions. Les mineurs doivent résoudre un problème mathématique complexe en ajustant le nonce dans l'en-tête du bloc jusqu'à ce qu'ils trouvent un hash qui satisfait les conditions de difficulté spécifiées. Ce processus nécessite une puissance de calcul significative, ce qui rend difficile la falsification des blocs. La preuve de travail garantit que les mineurs investissent des ressources pour sécuriser le réseau, rendant les attaques coûteuses et peu pratiques.
+#### Question 4.35
+Condition qu'un hash de bloc doit satisfaire pour être considéré comme valide :
+H(block_header) < target
